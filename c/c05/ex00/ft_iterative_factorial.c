@@ -6,7 +6,7 @@
 /*   By: ndancoin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 10:42:13 by ndancoin          #+#    #+#             */
-/*   Updated: 2023/09/11 19:00:13 by ndancoin         ###   ########.fr       */
+/*   Updated: 2023/09/11 20:30:27 by ndancoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,4 @@ int	main(void)
 	nb = 5;
 	printf("%d\n", ft_iterative_factorial(nb));
 	return (0);
-}
-*/
+}*/
