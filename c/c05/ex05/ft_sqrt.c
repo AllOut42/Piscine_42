@@ -6,7 +6,7 @@
 /*   By: ndancoin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 19:15:08 by ndancoin          #+#    #+#             */
-/*   Updated: 2023/09/07 19:57:26 by ndancoin         ###   ########.fr       */
+/*   Updated: 2023/09/11 19:15:34 by ndancoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_sqrt(int nb)
 		return (nb);
 	if (nb >= 0)
 	{
-		while (i * i < nb)
+		while (i * i < nb && i < 46341)
 			i++;
 	}
 	if (i * i == nb)
@@ -35,7 +35,7 @@ int	main(void)
 {
 	int	nb;
 
-	nb = 10;
+	nb = 2147395600;
 	printf("%d\n", ft_sqrt(nb));
 	return (0);
 }*/
