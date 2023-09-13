@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_show_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndancoin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 12:11:27 by ndancoin          #+#    #+#             */
-/*   Updated: 2023/09/13 13:01:16 by ndancoin         ###   ########.fr       */
+/*   Updated: 2023/09/13 21:12:43 by ndancoin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "ft_stock_str_h"
 
 struct s_stock_str *ft_str_to_tab(int ac, char **av);
+
+#include "ft_stock_str.h"
 
 void	ft_putchar(char c)
 {
@@ -22,10 +23,9 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
-	if (nb == 2147483648)
+	if (nb == -2147483648)
 	{
 		write(1, "-2147483648", 11);
-		return (0);
 	}
 	if (nb < 0)
 	{
@@ -53,21 +53,25 @@ void	ft_putstr(char *str)
 	}
 }
 
+void	ft_show_tab(struct s_stock_str *par)
+{
+	while (par->str)
+	{
+		ft_putstr(par->str);
+		ft_putchar('\n');
+		ft_putnbr(par->size);
+		ft_putchar('\n');
+		ft_putstr(par->copy);
+		ft_putchar('\n');
+		par++;
+	}
+}
+
 int	main(int ac, char **av)
 {
 	t_stock_str	*stock;
-
-	if (argc > 1)
-	{
-		stock = ft_str_to_tab(ac - 1, av[1]);
-		while (stock->str)
-		{
-			ft_putstr(stock->str);
-			ft_putchar('\n');
-			ft_putnbr(stock->size);
-			ft_putchar('\n');
-			ft_putstr(stock->copy);
-			stock++;
-		}
-	}	
+	
+	stock = ft_str_to_tab(ac, av);
+	ft_show_tab(stock);
+	return (0);
 }
